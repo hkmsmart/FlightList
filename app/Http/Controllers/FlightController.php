@@ -11,7 +11,7 @@ class FlightController extends Controller
     }
 
     public function getFlightList(){
-        $a = Flight::with('captain')->get();
-        return response()->json(['data'=>$a]);
+        $flightList = Flight::with('captain')->get();
+        return response()->json(['data'=>$flightList]);
     }
 }
